@@ -21,5 +21,8 @@ img{
     padding: 75px;
     color: black;
     margin-top:auto;
-
+}
+.addgoal{
+    display: flex;
+    flex-direction: vertical;
 }

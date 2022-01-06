@@ -1,12 +1,12 @@
 import './Savings.css'
-import React from 'react'
+import React, {useState} from 'react'
 import Logo from './c1logo.png'
 
 const Savings = () => {
     const name = "John Doe" //Will use get request
     const balance = "$200" //will use get request
     
-    // const [savingsgoal, setSavingsgoal] = useState();
+    const [savingsgoal, setSavingsgoal] = useState('');
     return (
         <div>
             <div className = 'header'>
@@ -17,6 +17,13 @@ const Savings = () => {
             </div>
         <h2>Current Balance: {balance}</h2>
         <h3>Savings Goals</h3>
+                <div className = 'addgoal'>
+                    <label>Goal Name</label>
+                    <input></input>
+                    <label>Amount</label>
+                    <input></input>
+                    <button>Add Goal</button>
+                </div>
         </div>
     )
 }
