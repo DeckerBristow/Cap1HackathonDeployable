@@ -1,4 +1,14 @@
-input {
+ .all{
+    background: url(https://www.hksinc.com/wp-content/uploads/2018/10/CapitalOneHQ_body.jpg) no-repeat center center fixed; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+      
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+ }
+ .input {
     display: inline;
 	width: 50%;
     height: 8%;
@@ -40,6 +50,7 @@ button {
     border: 5px solid #D22E1E;
 	border-radius: 80px;
     box-shadow: 5px 10px 30px grey ;
+    margin-bottom: auto;
 }
 
 .top-login {
@@ -83,7 +94,7 @@ h5 {
 
 label {
     font-size: 25px;
-    color: white;
+    color: grey;
 }
 
 a {
@@ -92,7 +103,7 @@ a {
     color: #D22E1E;
 }
 
-img {
+.img {
 
     background-color: #FFFF;
 
