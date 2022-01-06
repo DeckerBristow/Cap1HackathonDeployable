@@ -1,8 +1,9 @@
 import './Savings.css'
 import React, {useState} from 'react'
 import Logo from './c1logo.png'
+import { BrowserRouter as Router, Switch, Route, Link, useParams } from "react-router-dom"
 
-const Savings = () => {
+const Savings = (props) => {
     const name = "John Doe" //Will use get request
     const balance = "$200" //will use get request
     
@@ -17,6 +18,7 @@ const Savings = () => {
             </div>
         <h2>Current Balance: {balance}</h2>
         <h3>Savings Goals</h3>
+
                 <div className = 'addgoal'>
                     <label>Goal Name</label>
                     <input></input>
@@ -24,7 +26,13 @@ const Savings = () => {
                     <input></input>
                     <button>Add Goal</button>
                 </div>
+
+
+        <h3><Link to={"/landingPage/"}>Back</Link></h3>
+
+
         </div>
+
     )
 }
 
