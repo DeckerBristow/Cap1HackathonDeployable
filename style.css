@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    padding: 0;
+    /* background: url(c1\ webpg.jpg); */
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}
+
+.login {
+    top: 200px;
+    width: 60%;
+    bottom: 30%;
+    margin: 0 auto;
+    background-color: rgb(43, 139, 194);
+}
