@@ -1,4 +1,4 @@
-body {
+***** body {
     margin: 0;
     padding: 0;
     /* background: url(c1\ webpg.jpg); */
@@ -23,32 +23,36 @@ input[type=password] {
     width: 40%;
     bottom: 30%;
     margin: 0 auto;
-    background-color: rgb(43, 139, 194);
+    background-color: #004879;
 }
 
 .top-login {
-    /* display: block;
-    margin-left: auto;
-    margin-right: auto;
-    top: 100px;
-    margin: 0 auto;
-    text-align: auto;
-    font-family: sans-serif;
-    font-size: 150%; */
     text-align: center;
     margin: 24px 0 12px 0;
-    height: 100px;
-    width: 80px;
+    font-family: sans-serif;
+    font-size: 150%;
+}
+
+.icon {
+    width: 40%;
     border-radius: 50%;
 }
 
 .info {
+    padding: 16px;
     margin: 0 auto;
     font-family: sans-serif;
-    font-size: 150%;
 }
 
 .button {
     color: white;
     padding: 12px 20px;
+    background-color: #D22E1E;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.links {
+    font-size: 90%;
 }
