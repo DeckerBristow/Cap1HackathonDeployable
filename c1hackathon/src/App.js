@@ -3,6 +3,7 @@ import './App.css';
 import SavingsAccount from './Components/SavingsAccount';
 import { BrowserRouter as Router, Switch, Route, Link, useParams } from "react-router-dom"
 import { Navigate } from 'react-router-dom'
+import Savings from './Components/Savings';
 
 
 function App() {

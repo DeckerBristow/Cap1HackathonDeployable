@@ -1,0 +1,24 @@
+img{
+    max-width:33%;
+    height:auto;
+    display: block;
+    margin-left: auto;
+}
+.header{
+    display:flex; 
+    align-items: center;
+    background-color:#004879;
+    justify-content: space-evenly;
+    color:  white;
+    font-size: 1.5vw;
+    white-space: nowrap;
+    
+}
+.page{
+    font-family:sans-serif;
+    text-align: left;
+    padding: 75px;
+    color: black;
+    margin-top:auto;
+
+}
