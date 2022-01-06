@@ -9,13 +9,12 @@ const Savings = () => {
     // const [savingsgoal, setSavingsgoal] = useState();
     return (
         <div>
-        <div className = 'header'>
-            <h1>Hello  {name}</h1>
-            <div className = 'page'>
-                <img src = {Logo} alt = "c1"/>
-                
+            <div className = 'header'>
+                <h1>Hello  {name}</h1>
+                <div className = 'page'>
+                    <img src = {Logo} alt = "c1"/>
+                </div>
             </div>
-        </div>
         <h2>Current Balance: {balance}</h2>
         <h3>Savings Goals</h3>
         </div>
