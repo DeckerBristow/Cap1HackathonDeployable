@@ -7,14 +7,17 @@ function SavingsAccount (props){
 
 
 
-    return <div className="savingsAccount" >
-        {/* <Link to={"/savingsAccount/"+props.name}></Link> */}
+    return <Link to={"/savingsAccount/"+props.name}>
+        <div className="savingsAccount" >
+        
 
 
         <h1>Capital One</h1>
+        
         <p>This is a savings account for {props.name}</p>
 
     </div>
+    </Link>
 
 };
 
