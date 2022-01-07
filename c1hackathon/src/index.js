@@ -1,3 +1,10 @@
+// var serviceAccount = require("./permissions.json");
+// admin.initializeApp({
+//   credential: admin.credential.cert(serviceAccount),
+//   databaseURL: "https://fir-api-9a206..firebaseio.com"
+// });
+// const db = admin.firestore();
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
