@@ -5,12 +5,12 @@ import { useHistory } from "react-router-dom";
 
 function SavingsAccount(props) {
     const history = useHistory();
-    console.log(props.username);
+    console.log(props.username.length);
     props.loginhandler(props.username);
 
-    // if(JSON.stringify(props.userName).length===0){
-    //     history.push("/");
-    //   }
+    if(props.userName===undefined){
+        history.push("/");
+      }
 
 
 
