@@ -53,13 +53,11 @@ const Login = (props) => {
 
     //console.log(users[0].name.ref("name"));
 
-
     const handleClick = () => {
         users.forEach(element => {
             if (userName === element.username && password === element.password) {
-                props.loginhandler(element.username);
 
-                history.push("/landingPage/");
+                history.push("/landingPage/"+userName);
 
             }
         });
@@ -82,11 +80,11 @@ const Login = (props) => {
 
 
     return (
-
+        <div className = 'all'>
         <section className="login ">
 
             <div className="top-login ">
-                <img src="https://toppng.com/uploads/preview/user-account-management-logo-user-icon-11562867145a56rus2zwu.png" class="icon " />
+                <img src="https://toppng.com/uploads/preview/user-account-management-logo-user-icon-11562867145a56rus2zwu.png" className="icon " />
 
                 <h5>Login</h5>
             </div>
@@ -134,6 +132,7 @@ const Login = (props) => {
                 </div>
             </section>
         </section>
+        </div>
     )
 }
 

@@ -31,6 +31,7 @@ function App() {
 
   const [users, setUsers] = useState([]);
   const [userName, setUserName] = useState("");
+  const [accounts, setAccounts] = useState([]);
   const [savingsAccounts, setSavingsAccounts] = useState([]);
 
   useEffect(() => {
@@ -51,8 +52,8 @@ function App() {
 
   
 
-  const loginhandler = (username) => {
-    setUserName(username);
+  const loginhandler = (acc) => {
+    setAccounts(acc);
 
   }
 
@@ -67,19 +68,19 @@ function App() {
       <Switch>
         <Route exact path="/">
           <div className="App">
-            <Login loginhandler={loginhandler} />
+            <Login  />
           </div>
         </Route>
-        <Route exact path="/landingPage">
+        <Route exact path={"/landingPage/:id"}>
 
           <div className="App">
             <h1>Accounts</h1>
-            <SavingsAccount username={userName} loginhandler={loginhandler} />
+            <SavingsAccount username={userName} loginhandler={loginhandler}/>
 
 
             <div className="accountsList">
               {savingsAccounts.map(element => (
-                <SavingsAccount name="decker" />
+                <SavingsAccount name="decker"  />
               ))}
             </div>
             <Link className='addAccountButton' to="/addSavingsAccount"><button>Add Savings Account</button></Link>
@@ -92,8 +93,8 @@ function App() {
 
         </Route>
 
-        <Route exact path="/savingsAccount">
-          <Savings username={userName}></Savings>
+        <Route exact path="/savingsAccount/:id">
+          <Savings  accounts={accounts} username={userName}></Savings>
         </Route>
       </Switch>
     </Router>
