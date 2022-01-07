@@ -10,3 +10,15 @@ h1{
     margin-left: 250px;
     margin-right: 250px;
 }
+.header{
+    display:flex; 
+    align-items: center;
+    background-color:#004879;
+    justify-content: space-evenly;
+    color:  white;
+    font-size: 1.5vw; 
+    white-space: nowrap;
+    padding-left: 10px;
+    border: 10px ridge #004879;
+    
+}

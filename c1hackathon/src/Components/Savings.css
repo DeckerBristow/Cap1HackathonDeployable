@@ -1,3 +1,10 @@
+.firstthingyousee{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 10px;
+}
 img{
     max-width:33%;
     height:auto;
@@ -10,9 +17,17 @@ img{
     background-color:#004879;
     justify-content: space-evenly;
     color:  white;
-    font-size: 1.5vw;
+    font-size: 1.5vw; 
     white-space: nowrap;
+    padding-left: 10px;
+    border: 10px ridge #004879;
     
+}
+.hello{
+    border:3px solid rgb(249, 254, 255);
+    border-radius: 10px;
+    padding:15px;
+    background-color:rgb(1, 174, 226) ;
 }
 .page{
     font-family:sans-serif;
@@ -20,5 +35,33 @@ img{
     padding: 75px;
     color: black;
     margin-top:auto;
-
+}
+.balance{
+    border:30px solid grey;
+    background-color: grey;
+    border-radius: 10px;
+    margin:30px
+}
+.addgoal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.list-container{
+    max-width:50%;
+    height:auto;
+    margin-left:auto;
+    margin-right:auto;
+    padding-top:10px;
+    margin-top:10px;
+    border: grey;
+    border-style: solid;
+    border-radius: 10px;
+    text-align: center;
+    background-color: grey;
+    color:white;
+}
+.back{
+    margin-left:15px;
 }
