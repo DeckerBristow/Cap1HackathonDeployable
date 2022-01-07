@@ -27,6 +27,7 @@ const app = initializeApp(firebaseConfig);
 function App() {
 
   const [users, setUsers] = useState([]);
+
   const [savingsAccounts, setSavingsAccounts] = useState([]);
 
   useEffect(() => {
@@ -42,7 +43,12 @@ function App() {
       setUsers(tempUsers);
     });
   }, []);
-  console.log(users[0]);
+
+  //console.log(users[0].name.ref("name"));
+  //users.forEach(element => console.log(element.name));
+
+
+
 
   return (
     <Router>

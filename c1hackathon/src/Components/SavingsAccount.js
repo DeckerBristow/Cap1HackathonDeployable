@@ -2,23 +2,23 @@ import React, { useEffect, useState } from "react";
 import "./SavingsAccountStyle.css"
 import { BrowserRouter as Router, Switch, Route, Link, useParams } from "react-router-dom"
 
-function SavingsAccount (props){
+function SavingsAccount(props) {
 
 
 
 
-    return <Link to={"/savingsAccount/"+props.name}>
+    return <Link to={"/savingsAccount/" + props.name}>
         <div className="savingsAccount" >
-        
 
 
-        <h1>Account Name (from Firebase)</h1>
-        
-        
-        <p>This is a savings account for {props.name}</p>
+
+            <h1>Account Name (from Firebase)</h1>
 
 
-    </div>
+            <p>This is a savings account for {props.name}</p>
+
+
+        </div>
     </Link>
 
 };
