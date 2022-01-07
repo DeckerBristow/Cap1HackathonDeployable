@@ -82,7 +82,7 @@ const Login = (props) => {
 
 
     return (
-
+        <div className = 'all'>
         <section className="login ">
 
             <div className="top-login ">
@@ -134,6 +134,7 @@ const Login = (props) => {
                 </div>
             </section>
         </section>
+        </div>
     )
 }
 

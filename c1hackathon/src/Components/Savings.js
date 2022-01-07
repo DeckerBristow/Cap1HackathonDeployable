@@ -28,28 +28,19 @@ const Savings = (props) => {
     const [balance, setBalance] = useState('')
     const app = initializeApp(firebaseConfig);
 
-    const data =
-        [  //example data
-            { title: "Data 1", value: 10, color: "#AF454A" },
-            { title: "Data 2", value: 10, color: "#CE14F7" },
-            { title: "Data 3", value: 30, color: "#3da18d" },
-            { title: "Data 4", value: 20, color: "#1459F7" },
-            { title: "Data 5", value: 10, color: "#F77E14" },
-        ]
-
     const [savingsName, setSavingsName] = useState(''); //state for extracting input name
     const [amount, setAmount] = useState('');   //state for extracting input amount
-    const [accounts, setAccounts] = useState([])
+    const [accountBuckets, setAccounts] = useState([])
 
 
 
     const nameChangeHandler = (event) => {
-        console.log(event.target.value)
+        //console.log(event.target.value)
         setSavingsName(event.target.value)
     }
 
     const amountChangeHandler = (event) => {
-        console.log(event.target.value)
+        //console.log(event.target.value)
         setAmount(event.target.value)
     }
     //try to use connect to firestorm db
@@ -63,27 +54,40 @@ const Savings = (props) => {
                 tempAccounts.push(document.data());
             });
             setAccounts(tempAccounts);//sets state with array of accounts with dictionaries within them
+
         });
     }, []);
 
-    accounts.forEach(savings => {
-        console.log(savings)
-        if (savings.username == props.username) { //uid needs to be passed from login somehow
+    accountBuckets.forEach(savings => {
+        //console.log(savings)
+        if (savings.username === props.username) { //uid needs to be passed from login somehow
             setBalance(savings.balance);
             setName(savings.name);
         }
     })
 
     const AddGoal = () => { //takes inputs when button is pressed and sends POST request to firebase
-        console.log('click')
-        console.log(savingsName + ' variable after button press')
-        console.log(amount + ' var after button press')
-        let accounts = collection(firestore, "savingsAccounts");
+    //     //console.log('click')
+    //     //console.log(savingsName + ' variable after button press')
+    //     //console.log(amount + ' var after button press')
+    //     let accounts = collection(firestore, "savingsAccounts");
     };
 
-    console.log(savingsName + ' original variable')
-    console.log(amount + ' original variable');
-    //console.log(accounts[0].Goals);
+    //console.log(savingsName + ' original variable')
+    //console.log(amount + ' original variable');
+    
+
+    const data =
+        [  //example data
+            { title: "Data 1", value: 10, color: "#AF454A" },
+            { title: "Data 2", value: 10, color: "#CE14F7" },
+            { title: "Data 3", value: 30, color: "#3da18d" },
+            { title: "Data 4", value: 20, color: "#1459F7" },
+            { title: "Data 5", value: 10, color: "#F77E14" },
+        ]
+    //    console.log(accounts[0].Buckets[0])
+        
+        
     return (
         <div>
             <div className='header'>
