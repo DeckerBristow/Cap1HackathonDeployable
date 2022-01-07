@@ -12,9 +12,11 @@ function SavingsAccount (props){
         
 
 
-        <h1>Capital One</h1>
+        <h1>Account Name (from Firebase)</h1>
+        
         
         <p>This is a savings account for {props.name}</p>
+
 
     </div>
     </Link>
