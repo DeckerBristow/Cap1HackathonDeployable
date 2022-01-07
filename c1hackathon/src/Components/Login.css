@@ -8,13 +8,12 @@
     min-width: 100%;
     min-height: 100%;
  }
- .input {
+ input {
     display: inline;
 	width: 50%;
     height: 8%;
     font-size: 100%;
 	position: relative;
-	left: 25%;
 	padding: 12px 20px;
 	margin: 8px 10;
 	display: list-item;

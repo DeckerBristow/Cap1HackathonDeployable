@@ -1,14 +1,16 @@
 import './Savings.css'
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Logo from './c1logo.png'
 import { BrowserRouter as Router, Switch, Route, Link, useParams } from "react-router-dom"
 import ReactSvgPieChart from "react-svg-piechart"
+import firestore from '../firebase'
+import { collection, getDocs } from "firebase/firestore/lite"
 
 const Savings = (props) => {
     const name = "John Doe" //Will use get request
     const balance = "$200" //will use get request
     
-    const data = [
+    const data = [//example data
         {title: "Data 1", value: 10, color: "#AF454A"},
         {title: "Data 2", value: 10, color: "#CE14F7"},
         {title: "Data 3", value: 30, color: "#3da18d"},
@@ -16,7 +18,34 @@ const Savings = (props) => {
         {title: "Data 5", value: 10, color: "#F77E14"},
       ]
 
-    const [savingsgoal, setSavingsgoal] = useState('');
+    const [savingsName, setSavingsName] = useState(''); //state for extracting input name
+    const [amount, setAmount] = useState('');   //state for extracting input amount
+
+    const nameChangeHandler = (event) => {
+        console.log(event.target.value)
+        setSavingsName(event.target.value)
+    }
+
+    const amountChangeHandler = (event) => {
+        console.log(event.target.value)
+        setAmount(event.target.value)
+    }
+
+    const addGoal = ()=>{ //takes inputs when button is pressed and sends POST request to firebase
+        console.log('click')
+        const newGoal = {
+           name: savingsName,
+           amount: amount,
+        }
+        console.log(newGoal)
+        
+        //try to use connect to firestorm db
+        // useEffect(()=>{
+        //     const 
+        // },[])
+    }
+    //console.log(savingsName)
+    //console.log(amount);
     return (
         <div>
             <div className = 'header'>
@@ -30,12 +59,13 @@ const Savings = (props) => {
 
                 <div className = 'addgoal'>
                     <label>Goal Name</label>
-                    <input></input>
+                    <input placeholder = 'Type Goal Name Here' onChange = {nameChangeHandler}/>
                     <label>Amount</label>
-                    <input></input>
-                    <button>Add Goal</button>
+                    <input type="text" pattern="[0-9]*" placeholder = 'Type Amount' onChange = {amountChangeHandler}/>
+                    <button onClick = {addGoal} >Add Goal</button>
                 </div>
                 <div className="list-container">
+
                 Savings Data
                 <ReactSvgPieChart
                 data={data}

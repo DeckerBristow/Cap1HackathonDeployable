@@ -24,7 +24,9 @@ img{
 }
 .addgoal{
     display: flex;
-    flex-direction: vertical;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .list-container{
     max-width:50%;
