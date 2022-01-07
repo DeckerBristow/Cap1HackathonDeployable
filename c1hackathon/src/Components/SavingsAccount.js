@@ -1,13 +1,21 @@
 import React, { useEffect, useState } from "react";
 import "./SavingsAccountStyle.css"
 import { BrowserRouter as Router, Switch, Route, Link, useParams } from "react-router-dom"
+import { useHistory } from "react-router-dom";
 
 function SavingsAccount(props) {
+    const history = useHistory();
+    console.log(props.username);
+    props.loginhandler(props.username);
+
+    // if(JSON.stringify(props.userName).length===0){
+    //     history.push("/");
+    //   }
 
 
 
 
-    return <Link to={"/savingsAccount/" + props.name}>
+    return <Link to={"/savingsAccount/"}>
         <div className="savingsAccount" >
 
 

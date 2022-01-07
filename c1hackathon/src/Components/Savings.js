@@ -6,6 +6,9 @@ import ReactSvgPieChart from "react-svg-piechart"
 
 
 const Savings = (props) => {
+
+
+    console.log(props.username);
     const name = "John Doe" //Will use get request
     const balance = "$200" //will use get request
     const data = [

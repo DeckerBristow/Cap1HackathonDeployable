@@ -9,6 +9,7 @@ import AddSavingsAccount from "./Components/AddSavingsAccount";
 import { initializeApp } from 'firebase/app';
 import firestore from "./firebase"
 import { collection, getDocs } from 'firebase/firestore/lite';
+import { useHistory } from "react-router-dom";
 
 
 const firebaseConfig = {
@@ -25,12 +26,16 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 function App() {
+  const history = useHistory();
+
 
   const [users, setUsers] = useState([]);
-
+  const [userName, setUserName] = useState("");
   const [savingsAccounts, setSavingsAccounts] = useState([]);
 
   useEffect(() => {
+   
+    
     let accountUsers = collection(firestore, "users");
     getDocs(accountUsers).then(snapshot => {
       //Snapshots is just an array of all the documents in blog posts
@@ -44,6 +49,13 @@ function App() {
     });
   }, []);
 
+  
+
+  const loginhandler = (username) => {
+    setUserName(username);
+
+  }
+
   //console.log(users[0].name.ref("name"));
   //users.forEach(element => console.log(element.name));
 
@@ -55,14 +67,14 @@ function App() {
       <Switch>
         <Route exact path="/">
           <div className="App">
-            <Login />
+            <Login loginhandler={loginhandler} />
           </div>
         </Route>
-        <Route exact path="/landingPage/:id">
+        <Route exact path="/landingPage">
 
           <div className="App">
             <h1>Accounts</h1>
-            <SavingsAccount name="decker" />
+            <SavingsAccount username={userName} loginhandler={loginhandler} />
 
 
             <div className="accountsList">
@@ -80,8 +92,8 @@ function App() {
 
         </Route>
 
-        <Route exact path="/savingsAccount/:id">
-          <Savings></Savings>
+        <Route exact path="/savingsAccount">
+          <Savings username={userName}></Savings>
         </Route>
       </Switch>
     </Router>
