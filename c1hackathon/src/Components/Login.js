@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 import './Login.css'
-import { BrowserRouter as Router, Switch, Route, Link, useParams } from "react-router-dom"
-
-//import Form from "react-bootstrap/Form";
+import {auth, db, signInWithEmailAndPassword} from './firebaseutil.js';
+import { BrowserRouter as Router, Switch, Route, Link, useParams } from "react-router-dom";
 
 
 const Login = () => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
 
     return (
               
@@ -23,7 +25,7 @@ const Login = () => {
         <form action="/action_page.php " className="info ">
             <div class="uName ">
                 
-                <input type="text " placeholder="Enter Capital One Username " id="uName " name="uName "/>
+                <input type="text " placeholder="Enter Capital One Username " id="uName " name="uName " />
             </div>
             <br/>
             <div class="pWord ">
@@ -32,7 +34,7 @@ const Login = () => {
             </div>
             <br/>
             <div>
-                <Link to="/landingPage"><button type="submit " class="button ">Login</button></Link>
+                <Link to="/landingPage"><button type="submit " class="button " >Login</button></Link>
             </div>
             <br/>
             
