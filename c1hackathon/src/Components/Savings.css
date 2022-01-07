@@ -1,4 +1,4 @@
-.firstthingyousee{
+.load{
     display: flex;
     align-items: center;
     margin-left: auto;
@@ -9,6 +9,21 @@ img{
     max-width:33%;
     height:auto;
     display: block;
+    margin-left: auto;
+}
+.inputs{
+    display: inline;
+	width: 50%;
+    height: 8%;
+    font-size: 100%;
+	position: relative;
+	padding: 12px 20px;
+	margin: 8px 10;
+	display: list-item;
+	border: 5px solid #D22E1E;
+	border-radius: 80px;
+    margin-bottom: 5px;
+    margin-right: auto;
     margin-left: auto;
 }
 .header{
@@ -49,7 +64,7 @@ img{
     align-items: center;
 }
 .list-container{
-    max-width:50%;
+    max-width:33%;
     height:auto;
     margin-left:auto;
     margin-right:auto;

@@ -64,17 +64,17 @@ const goToSave = () =>{
         
         <div onClick={goToSave} >
         <div className='header'>
-                <h1 className='hello'>Hello {props.username}</h1>
+                <h1 className='hello'>Hello {id}</h1>
                 <div className='page'>
                     <img src={Logo} alt="c1" />
                 </div>
             </div>
         <div className="savingsAccount" >
 
-            <h1>Account Name (from Firebase)</h1>
+            <h1>Savings Account</h1>
 
 
-            <p>This is a savings account for {props.name}</p>
+            <p>{id}'s Savings: $20,000</p>
 
 
         </div>
