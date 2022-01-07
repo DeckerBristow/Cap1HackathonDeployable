@@ -1,13 +1,15 @@
+import React, { useEffect, useState } from "react";
 import logo from './logo.svg';
 import './App.css';
 import SavingsAccount from './Components/SavingsAccount';
 import { BrowserRouter as Router, Switch, Route, Link, useParams } from "react-router-dom"
-import { Navigate } from 'react-router-dom'
 import Savings from './Components/Savings';
 import Login from './Components/Login';
+import AddSavingsAccount from "./Components/AddSavingsAccount";
 import { initializeApp } from 'firebase/app';
 import firestore from "./firebase"
 import { collection, getDocs } from 'firebase/firestore/lite';
+import { useHistory } from "react-router-dom";
 
 
 const firebaseConfig = {
@@ -23,28 +25,75 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-
 function App() {
+  const history = useHistory();
+
+
+  const [users, setUsers] = useState([]);
+  const [userName, setUserName] = useState("");
+  const [savingsAccounts, setSavingsAccounts] = useState([]);
+
+  useEffect(() => {
+   
+    
+    let accountUsers = collection(firestore, "users");
+    getDocs(accountUsers).then(snapshot => {
+      //Snapshots is just an array of all the documents in blog posts
+      let tempUsers = [];
+
+      snapshot.forEach(document => {
+        tempUsers.push(document.data());
+      });
+
+      setUsers(tempUsers);
+    });
+  }, []);
+
+  
+
+  const loginhandler = (username) => {
+    setUserName(username);
+
+  }
+
+  //console.log(users[0].name.ref("name"));
+  //users.forEach(element => console.log(element.name));
+
+
+
 
   return (
     <Router>
       <Switch>
         <Route exact path="/">
           <div className="App">
-            <Login />
+            <Login loginhandler={loginhandler} />
           </div>
         </Route>
         <Route exact path="/landingPage">
 
           <div className="App">
             <h1>Accounts</h1>
-            <SavingsAccount name="decker" />
+            <SavingsAccount username={userName} loginhandler={loginhandler} />
+
+
+            <div className="accountsList">
+              {savingsAccounts.map(element => (
+                <SavingsAccount name="decker" />
+              ))}
+            </div>
+            <Link className='addAccountButton' to="/addSavingsAccount"><button>Add Savings Account</button></Link>
+
             <Link to="/"><button>Log Out</button></Link>
           </div>
         </Route>
+        <Route exact path="/addSavingsAccount">
+          <AddSavingsAccount />
 
-        <Route exact path="/savingsAccount/:id">
-          <Savings></Savings>
+        </Route>
+
+        <Route exact path="/savingsAccount">
+          <Savings username={userName}></Savings>
         </Route>
       </Switch>
     </Router>

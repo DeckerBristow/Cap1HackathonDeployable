@@ -21,7 +21,7 @@ const firebaseConfig = {
 };
 
 
-const Login = () => {
+const Login = (props) => {
     const history = useHistory();
 
     // Initialize Firebase
@@ -57,8 +57,9 @@ const Login = () => {
     const handleClick = () => {
         users.forEach(element => {
             if (userName === element.username && password === element.password) {
+                props.loginhandler(element.username);
 
-                history.push("/landingPage/"+element.name);
+                history.push("/landingPage/");
 
             }
         });
@@ -81,7 +82,7 @@ const Login = () => {
 
 
     return (
-    <div className = 'all'>
+
         <section className="login ">
 
             <div className="top-login ">
@@ -133,7 +134,6 @@ const Login = () => {
                 </div>
             </section>
         </section>
-    </div>
     )
 }
 

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import Logo from './c1logo.png'
 import { BrowserRouter as Router, Switch, Route, Link, useParams } from "react-router-dom"
 import ReactSvgPieChart from "react-svg-piechart"
+
 import { initializeApp } from 'firebase/app';
 import firestore from "../firebase"
 import { collection, getDocs } from 'firebase/firestore/lite';
@@ -121,8 +122,6 @@ const Savings = (props) => {
 
 
             <h3 className='back'><Link to={"/landingPage/"}>Back</Link></h3>
-
-
         </div>
 
     )
