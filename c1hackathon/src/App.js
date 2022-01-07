@@ -58,11 +58,13 @@ function App() {
             <Login />
           </div>
         </Route>
-        <Route exact path="/landingPage">
+        <Route exact path="/landingPage/:id">
 
           <div className="App">
             <h1>Accounts</h1>
             <SavingsAccount name="decker" />
+
+
             <div className="accountsList">
               {savingsAccounts.map(element => (
                 <SavingsAccount name="decker" />
